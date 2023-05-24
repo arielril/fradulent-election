@@ -1,5 +1,3 @@
-                                                 // readme.md
-
 # Fraudulent Election
 
 ## Agents
@@ -21,6 +19,16 @@
 
 > Beliefs
 - The election must not have a fraud
+
+> Desires
+- Configure the voting section
+  - list voters
+  - list candidates
+  - announce candidates
+- Open the voting section
+- Wait until all voters have voted
+- Compute the result
+- Show the result
 
 > Goals
 - Check on the ballot box

@@ -1,31 +1,42 @@
-/* initial beliefs and rules */
-has_fraud(false).
+/* beliefs */
+discovered_fraud(false).
 
-/* initial goals */
-!start.
+// the candidate(CName, CNumber) belief is defined in the jcm config file
 
-+!start : true <- .print("I'm the judge").
+
+/* desires */
+
+!configure_voting_section.
+
 
 /* plans */
 
-// start the voting section
-+!open_voting_section[scheme(S)]
-  <- // get all candidates
-      .findall(C, vote_for(C)[source(_)], Candidates);
-      // get all voters
-      .findall(A, play(A, voter, _), Voters);
-      // initialize the ballot machine
-      ballot_machine::open(Candidates, Voters);
-      .print("Candidates: ", Candidates, " \n Voters: ", Voters);
++!configure_voting_section
+  <- .print("configuring voting section...");
+    .print("searching candidates");
+    .findall(Name, candidate(Name, _)[source(_)], Candidates);
+    .print("registered candidates... ", Candidates);
 
-      // update the organization goal to "vote"
-      setArgumentValue(ballot, ballot_machine_id, b1)[artifact_name(S)];
+    // wait 2 seconds for the voters to enter the line
+    .wait(1000);
+    .print("searching voters");
+    .findall(AgName, waiting(AgName)[source(_)], Voters);
+    .print("registered voters... ", Voters);
+
+    !announce_candidates(Voters, Candidates);
   .
 
-+!close_voting_section
-  <- ?ballot_machine::election_result(W);
-      .println("The winner candidate was.... ", W);
++!announce_candidates(Voters, Candidates) 
+  : not .empty(Voters)
+  <- .print("announcing the candidates");
+    for ( .member(V, Voters) ) {
+      for ( .member(C, Candidates) ) {
+        .send(V, tell, candidate(C));
+      };
+    };
   .
+
 
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }
+{ include("$jacamoJar/templates/org-obedient.asl") }

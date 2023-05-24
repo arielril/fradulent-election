@@ -11,13 +11,14 @@ import jason.asSyntax.parser.*;
 public class BallotMachine extends Artifact {
     List<String> voters;
     List<String> votes;
+    int timeout;
 
     public void init() {
         defineObsProperty("status", "closed");
     }
 
     @OPERATION
-    public void open(Object[] candidates, Object[] voters) {
+    public void open(Object[] candidates, Object[] voters, int timeout) {
         this.voters = new ArrayList<>();
         this.votes = new ArrayList<>();
 
@@ -34,7 +35,9 @@ public class BallotMachine extends Artifact {
             this.voters.add(voter.toString());
         }
 
+        this.timeout = timeout;
         defineObsProperty("options", candidatesList);
+        defineObsProperty("deadline", this.timeout);
         getObsProperty("status").updateValue("open");
     }
 

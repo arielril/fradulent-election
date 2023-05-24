@@ -3,58 +3,54 @@
 <?xml-stylesheet href="http://moise.sourceforge.net/xml/os.xsl" type="text/xsl"?>
 
 <organisational-specification
-    id="fraud_election"
+    id="fraud_election_org"
     os-version="0.8"
     xmlns='http://moise.sourceforge.net/os'
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:schemaLocation='http://moise.sourceforge.net/os http://moise.sourceforge.net/xml/os.xsd'>
 
     <structural-specification>
+        <role-definitions>
+            <role id="judge"></role>
+            <role id="voter"></role>
+        </role-definitions>
+
         <group-specification id="voting_section">
             <roles>
                 <role id="judge" min="1" max="1" />
-                <role id="voter" min="3" max="10" />
-                <role id="bad_influence" min="1" max="1" />
+                <role id="voter" min="1" max="5" />
             </roles>
         </group-specification>
     </structural-specification>
 
+
     <functional-specification>
-        <scheme id="vote">
-            <goal id="voting">
+        <scheme id="fraudulent_election_sch">
+            <goal id="run_election">
                 <plan operator="sequence">
-                    <goal id="open_voting_section" />
-                    <goal id="ballot">
-                        <argument id="ballot_machine_id" />
-                    </goal>
-                    <goal id="close_voting_section" />
+                    <goal id="configure_voting_section"></goal>
+                    <goal id="open_voting_section"></goal>
+                    <goal id="voters_vote"></goal>
+                    <goal id="close_voting_section"></goal>
                 </plan>
             </goal>
 
-            <mission id="mJudge" min="1">
+            <mission id="judge" min="1" max="1">
+                <goal id="configure_voting_section" />
                 <goal id="open_voting_section" />
+                <goal id="close_voting_section" />
             </mission>
 
-            <mission id="mVoter" min="3">
-                <goal id="ballot" />
-            </mission>
-
-            <mission id="mInfluencer" min="1">
-                <goal id="commit_fraud" />
+            <mission id="voter" min="1" max="5">
+                <goal id="voters_vote" />
             </mission>
 
         </scheme>
-
     </functional-specification>
 
     <normative-specification>
-        <norm id="n1a" type="obligation"
-            role="judge" mission="mJudge" />
-        <norm id="n1b" type="permission"
-            role="voter" mission="mVoter" />
-        <norm id="n2" type="obligation"
-            role="influencer" mission="commit_fraud" />
+        <norm id="norm1" role="judge" type="obligation" mission="judge" />
+        <norm id="norm2" role="voter" type="obligation" mission="voter" />
     </normative-specification>
-
 
 </organisational-specification>

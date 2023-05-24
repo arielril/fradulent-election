@@ -1,41 +1,20 @@
+/* beliefs */
 
-/* initial beliefs and rules */
-candidate("jose", 1).
-candidate("paulo", 10).
-candidate("jorge", 30).
-candidate("cassiano", 35).
-candidate("maria", 15).
-candidate("paula", 33).
+// the vote_for belief comes from the jcm config file
 
-// i believe that I want to vote for some candidate
-vote_for(C).
+/* desires/goals */
 
-/* initial goals */
-// every voter will wait in line until it's time to vote
-+!start : true <- .print("I'm a voter").
-!at_waiting_line.
-
-
+!waiting_in_line.
 
 /* plans */
-// +!vote_for(C) : is_section_open
 
-+!at_waiting_line[source(A)] 
-  <- .print("Agent ", A, " is wating in the voting line").
-
-
-+!vote 
-  // get the name of the ballot machine
-  <- ?goalArgument(_, ballot, "ballot_machine_id", BMName);
-    // check if the voter has joined the workspace of the ballot machine
-    ?joined(ballot_machine_ws, BMId);
-    lookupArtifact(BMName, BMId)[wid(BMId)];
-    // focus in the ballot machine
-    ballot_machine::focus(BMId)[wid(BMId)];
++!waiting_in_line
+  <- .my_name(AgName);
+    .print("my name is ", AgName, ", i'm waiting to vote...");
+    // send everyone a message saying that the agent is waiting in line
+    .broadcast(tell, waiting(AgName));
   .
-
-
-
 
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }
+{ include("$jacamoJar/templates/org-obedient.asl") }
