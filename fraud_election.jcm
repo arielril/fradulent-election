@@ -16,7 +16,31 @@ mas fraud_election {
 
     agent sample_agent
 
-    
+    agent voter1 : voter.asl
+
+    agent judge
+
+    agent influencer
+
+    workspace ballot_machine_ws {
+        artifact b1 : voting.BallotMachine() {
+            focused-by: ballot_machine::judge
+        }
+
+        agents: voter1, influencer
+    }
+
+    organisation ballot_machine_ws : voting_section.xml {
+        group s1 : voting_section {
+            players: voter1 voter
+                     judge judge
+                     influencer influencer
+            
+            responsible-for: voting 
+        }
+
+        scheme voting: voting_section
+    }
 
 }
 
