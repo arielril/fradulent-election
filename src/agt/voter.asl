@@ -15,6 +15,10 @@
     .broadcast(tell, waiting(AgName));
   .
 
++!voters_vote[scheme(F)]
+  <- .print("voter ", .my_name(self), " is voting");
+  .
+
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }
 { include("$jacamoJar/templates/org-obedient.asl") }

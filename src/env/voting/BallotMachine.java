@@ -3,6 +3,7 @@
 package voting;
 
 import java.util.*;
+import java.util.logging.*;
 import cartago.OPERATION;
 import cartago.Artifact;
 import jason.asSyntax.*;
@@ -13,12 +14,20 @@ public class BallotMachine extends Artifact {
     List<String> votes;
     int timeout;
 
+    private Logger logger = Logger.getLogger("fraudulent_election.jcm." + BallotMachine.class.getName());
+
     public void init() {
+        /*
+         * Status:
+         * - closed
+         * - configured
+         * - open
+         */
         defineObsProperty("status", "closed");
     }
 
     @OPERATION
-    public void open(Object[] candidates, Object[] voters, int timeout) {
+    public void configure(Object[] candidates, Object[] voters, int timeout) {
         this.voters = new ArrayList<>();
         this.votes = new ArrayList<>();
 
@@ -30,14 +39,21 @@ public class BallotMachine extends Artifact {
                 System.out.println("parse error -> " + e);
             }
         }
+        logger.info("candidates - " + candidatesList.toString());
 
         for (Object voter : voters) {
             this.voters.add(voter.toString());
         }
+        logger.info("voters - " + voters.toString());
 
         this.timeout = timeout;
-        defineObsProperty("options", candidatesList);
+        defineObsProperty("candidates", candidatesList);
         defineObsProperty("deadline", this.timeout);
+        getObsProperty("status").updateValue("configured");
+    }
+
+    @OPERATION
+    public void open() {
         getObsProperty("status").updateValue("open");
     }
 

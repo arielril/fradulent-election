@@ -11,7 +11,7 @@ discovered_fraud(false).
 
 /* plans */
 
-+!configure_voting_section
++!configure_voting_section[scheme(F)]
   <- .print("configuring voting section...");
     .print("searching candidates");
     .findall(Name, candidate(Name, _)[source(_)], Candidates);
@@ -24,6 +24,9 @@ discovered_fraud(false).
     .print("registered voters... ", Voters);
 
     !announce_candidates(Voters, Candidates);
+
+    ballot_machine::configure(Candidates, Voters, 10);
+
   .
 
 +!announce_candidates(Voters, Candidates) 
@@ -35,6 +38,19 @@ discovered_fraud(false).
       };
     };
   .
+
+
++!open_voting_section[scheme(F)]
+  <- .print("openning the voting section...");
+    ballot_machine::open;
+  .
+
++!close_voting_section[scheme(F)]
+  <- .print("closing the voting section...");
+    ballot_machine::close;
+  .
+
+
 
 
 { include("$jacamoJar/templates/common-cartago.asl") }

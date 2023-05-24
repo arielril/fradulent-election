@@ -16,6 +16,12 @@ mas fraud_election {
                 candidate(paula, 33)
     }
 
+    workspace fraudulent_election_ws {
+        artifact ballot_machine : voting.BallotMachine() {
+            focused-by: judge, voter1, voter2
+        }
+    }
+
     organisation fraudulent_election_org : voting_section.xml {
 
         group g1 : voting_section {
