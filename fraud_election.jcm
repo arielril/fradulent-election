@@ -7,6 +7,10 @@ mas fraud_election {
         beliefs: vote_for(maria)
     }
 
+    agent voter3 : voter.asl {
+        beliefs: vote_for(maria)
+    }
+
     agent judge {
         beliefs: candidate(jose, 1)
                 candidate(paulo, 10)
@@ -18,7 +22,7 @@ mas fraud_election {
 
     workspace fraudulent_election_ws {
         artifact ballot_machine : voting.BallotMachine() {
-            focused-by: judge, voter1, voter2
+            focused-by: judge, voter1, voter2, voter3
         }
     }
 
@@ -28,7 +32,8 @@ mas fraud_election {
             responsible-for: running_election
             players: judge judge, 
                     voter1 voter,
-                    voter2 voter
+                    voter2 voter,
+                    voter3 voter
         }
 
         scheme running_election: fraudulent_election_sch

@@ -30,7 +30,7 @@
                 <plan operator="sequence">
                     <goal id="configure_voting_section"></goal>
                     <goal id="open_voting_section"></goal>
-                    <goal id="voters_vote"></goal>
+                    <goal id="voters_vote" ttf="30 seconds"></goal>
                     <goal id="close_voting_section"></goal>
                 </plan>
             </goal>

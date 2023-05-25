@@ -9,14 +9,17 @@
 /* plans */
 
 +!waiting_in_line
-  <- .my_name(AgName);
+  <- ?joined(fraudulent_election_ws, _);
+    .my_name(AgName);
     .print("my name is ", AgName, ", i'm waiting to vote...");
-    // send everyone a message saying that the agent is waiting in line
-    .broadcast(tell, waiting(AgName));
+    // tell the judge that the agent is waiting in line
+    .send(judge, tell, waiting(AgName));
   .
 
 +!voters_vote[scheme(F)]
-  <- .print("voter ", .my_name(self), " is voting");
+  : vote_for(C) & candidate(C)
+  <- .print("voter ", .my_name(self), " is going to vote for [", C, "]");
+    ballot_machine::vote(C);
   .
 
 { include("$jacamoJar/templates/common-cartago.asl") }

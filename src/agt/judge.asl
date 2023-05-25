@@ -6,8 +6,6 @@ discovered_fraud(false).
 
 /* desires */
 
-!configure_voting_section.
-
 
 /* plans */
 
@@ -25,17 +23,15 @@ discovered_fraud(false).
 
     !announce_candidates(Voters, Candidates);
 
-    ballot_machine::configure(Candidates, Voters, 10);
-
+    ballot_machine::configure(Candidates, Voters);
+    .wait(10000);
   .
 
 +!announce_candidates(Voters, Candidates) 
   : not .empty(Voters)
   <- .print("announcing the candidates");
-    for ( .member(V, Voters) ) {
-      for ( .member(C, Candidates) ) {
-        .send(V, tell, candidate(C));
-      };
+    for ( .member(C, Candidates) ) {
+      .broadcast(tell, candidate(C));
     };
   .
 
@@ -46,7 +42,10 @@ discovered_fraud(false).
   .
 
 +!close_voting_section[scheme(F)]
-  <- .print("closing the voting section...");
+  <- .print("waiting until all voters have voted...");
+    // 10s
+    .wait(10000); 
+    .print("closing the voting section...");
     ballot_machine::close;
   .
 

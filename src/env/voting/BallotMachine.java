@@ -12,7 +12,6 @@ import jason.asSyntax.parser.*;
 public class BallotMachine extends Artifact {
     List<String> voters;
     List<String> votes;
-    int timeout;
 
     private Logger logger = Logger.getLogger("fraudulent_election.jcm." + BallotMachine.class.getName());
 
@@ -27,7 +26,7 @@ public class BallotMachine extends Artifact {
     }
 
     @OPERATION
-    public void configure(Object[] candidates, Object[] voters, int timeout) {
+    public void configure(Object[] candidates, Object[] voters) {
         this.voters = new ArrayList<>();
         this.votes = new ArrayList<>();
 
@@ -46,9 +45,7 @@ public class BallotMachine extends Artifact {
         }
         logger.info("voters - " + voters.toString());
 
-        this.timeout = timeout;
         defineObsProperty("candidates", candidatesList);
-        defineObsProperty("deadline", this.timeout);
         getObsProperty("status").updateValue("configured");
     }
 
@@ -80,28 +77,29 @@ public class BallotMachine extends Artifact {
     }
 
     public String computeResults() {
-        HashMap<String, Integer> result = new HashMap<String, Integer>();
+        HashMap<String, Integer> votesMap = new HashMap<String, Integer>();
 
         for (String vote : this.votes) {
-            if (!result.containsKey(vote)) {
-                result.put(vote, 0);
+            if (!votesMap.containsKey(vote)) {
+                votesMap.put(vote, 0);
             }
 
-            result.put(vote, result.get(vote) + 1);
+            votesMap.put(vote, votesMap.get(vote) + 1);
         }
 
-        System.out.println("Voting result -> " + result.toString());
+        logger.info("Votes -> " + votesMap.toString());
 
-        String winner = "";
+        String winner = "N/A";
         Integer winnerVotes = 0;
 
-        for (Map.Entry<String, Integer> r : result.entrySet()) {
+        for (Map.Entry<String, Integer> r : votesMap.entrySet()) {
             if (r.getValue() > winnerVotes) {
                 winnerVotes = r.getValue();
                 winner = r.getKey();
             }
         }
 
+        logger.info("Election result -> Candidate: " + winner + " (" + winnerVotes + ")");
         return winner;
     }
 
