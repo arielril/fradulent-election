@@ -16,7 +16,7 @@ discovered_fraud(false).
     .print("registered candidates... ", Candidates);
 
     // wait 2 seconds for the voters to enter the line
-    .wait(1000);
+    .wait(2000);
     .print("searching voters");
     .findall(AgName, waiting(AgName)[source(_)], Voters);
     .print("registered voters... ", Voters);
@@ -24,7 +24,6 @@ discovered_fraud(false).
     !announce_candidates(Voters, Candidates);
 
     ballot_machine::configure(Candidates, Voters);
-    .wait(10000);
   .
 
 +!announce_candidates(Voters, Candidates) 
@@ -41,14 +40,11 @@ discovered_fraud(false).
     ballot_machine::open;
   .
 
-+!close_voting_section[scheme(F)]
-  <- .print("waiting until all voters have voted...");
-    // 10s
-    .wait(10000); 
++!close_voting_section[scheme(F), source(_)]
+  <- .print("waiting for every voter to vote...");
     .print("closing the voting section...");
     ballot_machine::close;
   .
-
 
 
 

@@ -9,17 +9,29 @@
 /* plans */
 
 +!waiting_in_line
-  <- ?joined(fraudulent_election_ws, _);
+  <- .print("joining fraudulent election");
+    // ?goalArgument();
+    ?joined(fraudulent_election_ws, _);
+    .print("joined fraudulent election");
     .my_name(AgName);
     .print("my name is ", AgName, ", i'm waiting to vote...");
     // tell the judge that the agent is waiting in line
     .send(judge, tell, waiting(AgName));
   .
 
+-!waiting_in_line
+  <- .print("could not join fraudulent election");
+  .
+
 +!voters_vote[scheme(F)]
   : vote_for(C) & candidate(C)
-  <- .print("voter ", .my_name(self), " is going to vote for [", C, "]");
+  <- ?joined(fraudulent_election_ws, _); 
+    .print("voter ", .my_name(self), " is going to vote for [", C, "]");
     ballot_machine::vote(C);
+  .
+
+-!voters_vote[scheme(F)]
+  <- .print("could not vote");
   .
 
 { include("$jacamoJar/templates/common-cartago.asl") }

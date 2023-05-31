@@ -71,6 +71,11 @@ public class BallotMachine extends Artifact {
     }
 
     @OPERATION
+    public boolean hasEveryoneVoted() {
+        return this.voters.size() == 0;
+    }
+
+    @OPERATION
     public void close() {
         defineObsProperty("election_result", computeResults());
         getObsProperty("status").updateValue("close");

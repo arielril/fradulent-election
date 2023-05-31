@@ -11,14 +11,14 @@
 
     <structural-specification>
         <role-definitions>
-            <role id="judge"></role>
-            <role id="voter"></role>
+            <role id="election_judge"></role>
+            <role id="election_voter"></role>
         </role-definitions>
 
         <group-specification id="voting_section">
             <roles>
-                <role id="judge" min="1" max="1" />
-                <role id="voter" min="1" max="5" />
+                <role id="election_judge" min="1" max="1" />
+                <role id="election_voter" min="1" max="10" />
             </roles>
         </group-specification>
     </structural-specification>
@@ -31,7 +31,7 @@
                     <goal id="configure_voting_section"></goal>
                     <goal id="open_voting_section"></goal>
                     <goal id="voters_vote" ttf="30 seconds"></goal>
-                    <goal id="close_voting_section"></goal>
+                    <goal id="close_voting_section" ttf="5 seconds"></goal>
                 </plan>
             </goal>
 
@@ -41,7 +41,7 @@
                 <goal id="close_voting_section" />
             </mission>
 
-            <mission id="voter" min="1" max="5">
+            <mission id="voter" min="1" max="10">
                 <goal id="voters_vote" />
             </mission>
 
@@ -49,8 +49,8 @@
     </functional-specification>
 
     <normative-specification>
-        <norm id="norm1" role="judge" type="obligation" mission="judge" />
-        <norm id="norm2" role="voter" type="obligation" mission="voter" />
+        <norm id="norm1" role="election_judge" type="obligation" mission="judge" />
+        <norm id="norm2" role="election_voter" type="obligation" mission="voter" />
     </normative-specification>
 
 </organisational-specification>

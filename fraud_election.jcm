@@ -8,8 +8,36 @@ mas fraud_election {
     }
 
     agent voter3 : voter.asl {
+        beliefs: vote_for(jorge)
+    }
+
+    agent voter4 : voter.asl {
+        beliefs: vote_for(paulo)
+    }
+
+    agent voter5 : voter.asl {
         beliefs: vote_for(maria)
     }
+
+    // agent voter6 : voter.asl {
+    //     beliefs: vote_for(cassiano)
+    // }
+
+    // agent voter7 : voter.asl {
+    //     beliefs: vote_for(cassiano)
+    // }
+
+    // agent voter8 : voter.asl {
+    //     beliefs: vote_for(paula)
+    // }
+
+    // agent voter9 : voter.asl {
+    //     beliefs: vote_for(paulo)
+    // }
+
+    // agent voter10 : voter.asl {
+    //     beliefs: vote_for(jorge)
+    // }
 
     agent judge {
         beliefs: candidate(jose, 1)
@@ -22,7 +50,17 @@ mas fraud_election {
 
     workspace fraudulent_election_ws {
         artifact ballot_machine : voting.BallotMachine() {
-            focused-by: judge, voter1, voter2, voter3
+            focused-by: judge, 
+                        voter1, 
+                        voter2, 
+                        voter3, 
+                        voter4, 
+                        voter5 // ,
+                        // voter6,
+                        // voter7,
+                        // voter8,
+                        // voter9,
+                        // voter10
         }
     }
 
@@ -30,10 +68,17 @@ mas fraud_election {
 
         group g1 : voting_section {
             responsible-for: running_election
-            players: judge judge, 
-                    voter1 voter,
-                    voter2 voter,
-                    voter3 voter
+            players: judge election_judge, 
+                    voter1 election_voter,
+                    voter2 election_voter,
+                    voter3 election_voter
+                    voter4 election_voter,
+                    voter5 election_voter // ,
+                    // voter6 election_voter,
+                    // voter7 election_voter,
+                    // voter8 election_voter,
+                    // voter9 election_voter,
+                    // voter10 election_voter,
         }
 
         scheme running_election: fraudulent_election_sch
