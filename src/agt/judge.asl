@@ -40,11 +40,52 @@ discovered_fraud(false).
     ballot_machine::open;
   .
 
-+!close_voting_section[scheme(F), source(_)]
-  <- .print("waiting for every voter to vote...");
-    .print("closing the voting section...");
++!close_voting_section[scheme(F)]
+  : election_status("open")
+  <- .print("closing the voting section...");
     ballot_machine::close;
   .
+
+-!close_voting_section[scheme(F)]
+  : election_status("closed") & election_with_fraud("yes")
+  <- .print("election was halted because of a fraud");
+  .
+
+-!close_voting_section[scheme(F)]
+  <- .print("failed to close voting section...");
+  .
+
++!analyze_fraud[scheme(F), source(_)]
+  : election_status("open")
+  <- ?joined(fraudulent_election_ws, _);
+    .print("evaluating if there was any fraud");
+    ballot_machine::computeVotesOnCandidate(paulinho_mao_cheia);
+    ?election_votes_on_candidate(PaulinhoVotes);
+    .print("votes on paulinho_mao_cheia = ", PaulinhoVotes);
+
+    if ( PaulinhoVotes >= 2 ) {
+      .print("[[ GOT_FRAUD ]] someone was commiting fraud!!");
+      .print("closing ballot machine");
+      ballot_machine::foundFraud;
+      .broadcast(tell, discovered_fraud(yes));
+    } else {
+      .wait(500);
+      !analyze_fraud[scheme(F)];
+    };
+  .
+
+-!analyze_fraud[scheme(F)]
+  : election_status("closed") & election_result(Result) & Result \== "N/A"
+  <- .print("result? = ", Result);
+    .print("there was no fraud in the election! :P");
+  .
+
+-!analyze_fraud[scheme(F)]
+  <- .print("could not evaluate fraud ;(");
+    .wait(300);
+    !analyze_fraud[scheme(F)];
+  .
+
 
 
 

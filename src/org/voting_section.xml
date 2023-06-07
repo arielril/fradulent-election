@@ -27,11 +27,16 @@
     <functional-specification>
         <scheme id="fraudulent_election_sch">
             <goal id="run_election">
-                <plan operator="sequence">
-                    <goal id="configure_voting_section"></goal>
-                    <goal id="open_voting_section"></goal>
-                    <goal id="voters_vote" ttf="30 seconds"></goal>
-                    <goal id="close_voting_section" ttf="5 seconds"></goal>
+                <plan operator="parallel">
+                    <goal id="allow_voting">
+                        <plan operator="sequence">
+                            <goal id="configure_voting_section"></goal>
+                            <goal id="open_voting_section"></goal>
+                            <goal id="voters_vote" ttf="40 seconds"></goal>
+                            <goal id="close_voting_section" ttf="5 seconds"></goal>
+                        </plan>
+                    </goal>
+                    <goal id="analyze_fraud"></goal>
                 </plan>
             </goal>
 
@@ -39,6 +44,7 @@
                 <goal id="configure_voting_section" />
                 <goal id="open_voting_section" />
                 <goal id="close_voting_section" />
+                <goal id="analyze_fraud" />
             </mission>
 
             <mission id="voter" min="1" max="10">

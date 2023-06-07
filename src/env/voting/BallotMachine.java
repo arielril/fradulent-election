@@ -22,7 +22,8 @@ public class BallotMachine extends Artifact {
          * - configured
          * - open
          */
-        defineObsProperty("status", "closed");
+        defineObsProperty("election_status", "closed");
+        defineObsProperty("election_result", "N/A");
     }
 
     @OPERATION
@@ -45,26 +46,26 @@ public class BallotMachine extends Artifact {
         }
         logger.info("voters - " + voters.toString());
 
-        defineObsProperty("candidates", candidatesList);
-        getObsProperty("status").updateValue("configured");
+        defineObsProperty("election_candidates", candidatesList);
+        getObsProperty("election_status").updateValue("configured");
     }
 
     @OPERATION
     public void open() {
-        getObsProperty("status").updateValue("open");
+        getObsProperty("election_status").updateValue("open");
     }
 
     @OPERATION
     public void vote(Object vote) {
-        if (getObsProperty("status").getValue().equals("closed")) {
+        if (getObsProperty("election_status").getValue().equals("closed")) {
             failed("the voting section is closed");
         }
 
         if (voters.remove(getCurrentOpAgentId().getAgentName())) {
             this.votes.add((String) vote);
-            if (this.voters.isEmpty()) {
-                close();
-            }
+            // if (this.voters.isEmpty()) {
+            // close();
+            // }
         } else {
             failed("agent already voted");
         }
@@ -77,8 +78,8 @@ public class BallotMachine extends Artifact {
 
     @OPERATION
     public void close() {
-        defineObsProperty("election_result", computeResults());
-        getObsProperty("status").updateValue("close");
+        getObsProperty("election_result").updateValue(computeResults());
+        getObsProperty("election_status").updateValue("closed");
     }
 
     public String computeResults() {
@@ -106,6 +107,34 @@ public class BallotMachine extends Artifact {
 
         logger.info("Election result -> Candidate: " + winner + " (" + winnerVotes + ")");
         return winner;
+    }
+
+    @OPERATION
+    public void foundFraud() {
+        defineObsProperty("election_with_fraud", "yes");
+        if (getObsProperty("election_status") != null) {
+            getObsProperty("election_status").updateValue("closed");
+        } else {
+            defineObsProperty("election_status", "closed");
+        }
+    }
+
+    @OPERATION
+    public void computeVotesOnCandidate(Object candidate) {
+        int res = 0;
+
+        String candidateString = (String) candidate;
+        for (String vote : this.votes) {
+            if (vote.equals(candidateString)) {
+                res += 1;
+            }
+        }
+
+        if (getObsProperty("election_votes_on_candidate") != null) {
+            getObsProperty("election_votes_on_candidate").updateValue(res);
+        } else {
+            defineObsProperty("election_votes_on_candidate", res);
+        }
     }
 
 }

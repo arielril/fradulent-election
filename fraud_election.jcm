@@ -19,25 +19,9 @@ mas fraud_election {
         beliefs: vote_for(maria)
     }
 
-    // agent voter6 : voter.asl {
-    //     beliefs: vote_for(cassiano)
-    // }
-
-    // agent voter7 : voter.asl {
-    //     beliefs: vote_for(cassiano)
-    // }
-
-    // agent voter8 : voter.asl {
-    //     beliefs: vote_for(paula)
-    // }
-
-    // agent voter9 : voter.asl {
-    //     beliefs: vote_for(paulo)
-    // }
-
-    // agent voter10 : voter.asl {
-    //     beliefs: vote_for(jorge)
-    // }
+    agent bad_influence : influence.asl {
+        beliefs: candidate(paulinho_mao_cheia)
+    }
 
     agent judge {
         beliefs: candidate(jose, 1)
@@ -46,6 +30,7 @@ mas fraud_election {
                 candidate(cassiano, 35)
                 candidate(maria, 15)
                 candidate(paula, 33)
+                candidate(paulinho_mao_cheia, 66)
     }
 
     workspace fraudulent_election_ws {
@@ -55,12 +40,7 @@ mas fraud_election {
                         voter2, 
                         voter3, 
                         voter4, 
-                        voter5 // ,
-                        // voter6,
-                        // voter7,
-                        // voter8,
-                        // voter9,
-                        // voter10
+                        voter5
         }
     }
 
@@ -73,12 +53,7 @@ mas fraud_election {
                     voter2 election_voter,
                     voter3 election_voter
                     voter4 election_voter,
-                    voter5 election_voter // ,
-                    // voter6 election_voter,
-                    // voter7 election_voter,
-                    // voter8 election_voter,
-                    // voter9 election_voter,
-                    // voter10 election_voter,
+                    voter5 election_voter
         }
 
         scheme running_election: fraudulent_election_sch
