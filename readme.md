@@ -54,6 +54,30 @@
     1. Influence the voter to vote for their candidate/brake the ballot box
 3. Go away from the voter
 
+## General execution
+
+normal election
+
+1. voters wait in line
+2. judge configs the section
+2.1. list all voters
+2.2. list all candidates
+2.3. initialize voting section
+3. one voter at a time go to vote
+4. after all voters have voted, judge close the section
+5. judge shows the election result
+
+----
+
+in parallel...
+
+the bad influence
+
+1. wait a voter to enter the line
+2. when a voter get in the line...
+2.1. try to influence the voter
+2.2. if the voter is influenced - success
+2.3. otherwise - go to the another
 
 ## Environment Items
 

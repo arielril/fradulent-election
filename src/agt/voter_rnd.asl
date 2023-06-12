@@ -1,6 +1,6 @@
 /* beliefs */
 ready_to_vote("no").
-chance_to_fraud(0.5).
+chance_to_fraud(0).
 break_ballot(no).
 
 // the vote_for belief comes from the jcm config file
@@ -15,6 +15,9 @@ break_ballot(no).
   <- .print("joining fraudulent election");
     ?joined(fraudulent_election_ws, _);
     .print("joined fraudulent election");
+    ChanceOfFraud = math.random;
+    -+chance_to_fraud(ChanceOfFraud);
+    .print("for this election I have a chance of [", ChanceOfFraud, "] to commit fraud");
     .my_name(AgName);
     .print("my name is ", AgName, ", i'm waiting to vote...");
     // tell the judge that the agent is waiting in line

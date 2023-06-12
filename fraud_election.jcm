@@ -19,6 +19,18 @@ mas fraud_election {
         beliefs: vote_for(maria)
     }
 
+    agent voter6 : voter.asl {
+        beliefs: vote_for(maria)
+    }
+
+    agent voter7 : voter.asl {
+        beliefs: vote_for(maria)
+    }
+
+    agent voter8 : voter.asl {
+        beliefs: vote_for(maria)
+    }
+
     agent bad_influence : influence.asl {
         beliefs: candidate(paulinho_mao_cheia)
     }
@@ -40,8 +52,12 @@ mas fraud_election {
                         voter2, 
                         voter3, 
                         voter4, 
-                        voter5
+                        voter5, 
+                        voter6, 
+                        voter7, 
+                        voter8
         }
+
     }
 
     organisation fraudulent_election_org : voting_section.xml {
@@ -53,7 +69,10 @@ mas fraud_election {
                     voter2 election_voter,
                     voter3 election_voter
                     voter4 election_voter,
-                    voter5 election_voter
+                    voter5 election_voter,
+                    voter6 election_voter,
+                    voter7 election_voter,
+                    voter8 election_voter
         }
 
         scheme running_election: fraudulent_election_sch

@@ -21,6 +21,7 @@ public class BallotMachine extends Artifact {
          * - closed
          * - configured
          * - open
+         * - broken
          */
         defineObsProperty("election_status", "closed");
         defineObsProperty("election_result", "N/A");
@@ -61,11 +62,13 @@ public class BallotMachine extends Artifact {
             failed("the voting section is closed");
         }
 
+        if (!getObsProperty("election_status").getValue().equals("open")) {
+            logger.warning("the voting section is not open. something happened...");
+            return;
+        }
+
         if (voters.remove(getCurrentOpAgentId().getAgentName())) {
             this.votes.add((String) vote);
-            // if (this.voters.isEmpty()) {
-            // close();
-            // }
         } else {
             failed("agent already voted");
         }
@@ -111,11 +114,26 @@ public class BallotMachine extends Artifact {
 
     @OPERATION
     public void foundFraud() {
-        defineObsProperty("election_with_fraud", "yes");
+        if (getObsProperty("election_with_fraud") != null) {
+            getObsProperty("election_with_fraud").updateValue("yes");
+        } else {
+            defineObsProperty("election_with_fraud", "yes");
+        }
+
         if (getObsProperty("election_status") != null) {
             getObsProperty("election_status").updateValue("closed");
         } else {
             defineObsProperty("election_status", "closed");
+        }
+    }
+
+    @OPERATION
+    public void destroyBallotMachine() {
+        logger.info("received the DESTROY operation!");
+        if (getObsProperty("election_status") != null) {
+            getObsProperty("election_status").updateValue("broken");
+        } else {
+            defineObsProperty("election_status", "broken");
         }
     }
 
@@ -136,5 +154,4 @@ public class BallotMachine extends Artifact {
             defineObsProperty("election_votes_on_candidate", res);
         }
     }
-
 }

@@ -74,6 +74,14 @@ discovered_fraud(false).
     };
   .
 
++!analyze_fraud[scheme(F), source(_)]
+  : election_status("broken")
+  <- ?joined(fraudulent_election_ws, _);
+    .print("[[ FRAUD ]] the ballot machine is BROKEN!");
+    ballot_machine::foundFraud;
+    .broadcast(tell, discovered_fraud(yes));
+  .
+
 -!analyze_fraud[scheme(F)]
   : election_status("closed") & election_result(Result) & Result \== "N/A"
   <- .print("result? = ", Result);
