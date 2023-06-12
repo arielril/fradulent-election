@@ -1,0 +1,385 @@
+CArtAgO Http Server running on http://169.254.100.4:3273
+Jason Http Server running on http://169.254.100.4:3272
+Moise Http Server running on http://169.254.100.4:3271
+[Moise] OrgBoard fraudulent_election_org created.
+[Moise] scheme created: running_election: fraudulent_election_sch using artifact SchemeBoard
+[Moise] group created: g1: voting_section using artifact ora4mas.nopl.GroupBoard
+[Cartago] Workspace fraudulent_election_ws created.
+[Cartago] artifact ballot_machine: voting.BallotMachine() at fraudulent_election_ws created.
+[judge] join workspace /main/fraudulent_election_org: done
+[voter6] join workspace /main/fraudulent_election_org: done
+[voter1] join workspace /main/fraudulent_election_org: done
+[judge] join workspace /main/fraudulent_election_ws: done
+[voter4] join workspace /main/fraudulent_election_org: done
+[voter6] join workspace /main/fraudulent_election_ws: done
+[voter1] join workspace /main/fraudulent_election_ws: done
+[judge] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter6] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter2] join workspace /main/fraudulent_election_org: done
+[voter4] join workspace /main/fraudulent_election_ws: done
+[voter1] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter5] join workspace /main/fraudulent_election_org: done
+[voter4] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter6] focus on ballot_machine: done
+[voter2] join workspace /main/fraudulent_election_ws: done
+[voter7] join workspace /main/fraudulent_election_org: done
+[judge] focus on ballot_machine: done
+[voter6] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter1] focus on ballot_machine: done
+[voter2] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[judge] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter4] focus on ballot_machine: done
+[voter8] join workspace /main/fraudulent_election_org: done
+[voter5] join workspace /main/fraudulent_election_ws: done
+[voter7] join workspace /main/fraudulent_election_ws: done
+[voter1] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter3] join workspace /main/fraudulent_election_org: done
+[voter5] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter4] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter2] focus on ballot_machine: done
+[voter7] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter6] focus on g1: done
+[judge] focus on g1: done
+[voter8] join workspace /main/fraudulent_election_ws: done
+[voter2] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter6] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter3] join workspace /main/fraudulent_election_ws: done
+[voter7] focus on ballot_machine: done
+[voter1] focus on g1: done
+[voter4] focus on g1: done
+[voter8] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter5] focus on ballot_machine: done
+[judge] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter4] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter1] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter7] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter3] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter2] focus on g1: done
+[voter6] focus on fraudulent_election_org: done
+[voter5] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter2] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter6] joining fraudulent election
+[voter8] focus on ballot_machine: done
+[voter3] focus on ballot_machine: done
+[voter8] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[judge] focus on fraudulent_election_org: done
+[voter3] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter4] focus on fraudulent_election_org: done
+[voter1] focus on fraudulent_election_org: done
+[voter5] focus on g1: done
+[voter7] focus on g1: done
+[voter4] joining fraudulent election
+[voter2] focus on fraudulent_election_org: done
+[voter1] joining fraudulent election
+[voter5] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter7] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter2] joining fraudulent election
+[voter3] focus on g1: done
+[voter3] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter5] focus on fraudulent_election_org: done
+[voter7] focus on fraudulent_election_org: done
+[voter5] joining fraudulent election
+[voter7] joining fraudulent election
+[voter3] focus on fraudulent_election_org: done
+[voter3] joining fraudulent election
+[voter6] joined fraudulent election
+[voter6] my name is voter6, i'm waiting to vote...
+[voter8] focus on g1: done
+[voter8] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter8] focus on fraudulent_election_org: done
+[voter8] joining fraudulent election
+[voter4] joined fraudulent election
+[voter1] joined fraudulent election
+[voter4] my name is voter4, i'm waiting to vote...
+[voter2] joined fraudulent election
+[voter5] joined fraudulent election
+[voter1] my name is voter1, i'm waiting to vote...
+[voter2] my name is voter2, i'm waiting to vote...
+[voter5] my name is voter5, i'm waiting to vote...
+[voter7] joined fraudulent election
+[voter7] my name is voter7, i'm waiting to vote...
+[voter3] joined fraudulent election
+[voter3] my name is voter3, i'm waiting to vote...
+[voter8] joined fraudulent election
+[voter8] my name is voter8, i'm waiting to vote...
+[voter2] I am obliged to commit to voter on running_election... doing so
+[voter8] I am obliged to commit to voter on running_election... doing so
+[voter6] I am obliged to commit to voter on running_election... doing so
+[judge] I am obliged to commit to judge on running_election... doing so
+[voter3] I am obliged to commit to voter on running_election... doing so
+[voter7] I am obliged to commit to voter on running_election... doing so
+[voter5] I am obliged to commit to voter on running_election... doing so
+[voter1] I am obliged to commit to voter on running_election... doing so
+[voter4] I am obliged to commit to voter on running_election... doing so
+[bad_influence] new possible victm to commit fraud - voter6
+[bad_influence] new possible victm to commit fraud - voter4
+[bad_influence] influencing to commit fraud voter6
+[bad_influence] new possible victm to commit fraud - voter1
+[bad_influence] new possible victm to commit fraud - voter2
+[bad_influence] new possible victm to commit fraud - voter5
+[bad_influence] influencing to commit fraud voter4
+[bad_influence] new possible victm to commit fraud - voter7
+[bad_influence] new possible victm to commit fraud - voter3
+[bad_influence] new possible victm to commit fraud - voter8
+[bad_influence] influencing to commit fraud voter1
+[bad_influence] influencing to commit fraud voter2
+[bad_influence] influencing to commit fraud voter5
+[bad_influence] influencing voter6 to change candidates...
+[bad_influence] influencing to commit fraud voter7
+[bad_influence] influencing to commit fraud voter3
+[bad_influence] influencing to commit fraud voter8
+[bad_influence] influencing voter4 to change candidates...
+[voter6] received a new candidate to vote for... paulinho_mao_cheia
+[bad_influence] influencing voter1 to break the ballot machine
+[voter4] received a new candidate to vote for... paulinho_mao_cheia
+[bad_influence] influencing voter2 to change candidates...
+[voter6] ShouldICommitFraud = 0.7762756731707421
+[bad_influence] influencing voter5 to change candidates...
+[voter4] ShouldICommitFraud = 0.9695473242021422
+[bad_influence] influencing voter7 to change candidates...
+[voter1] recieved an intention to break the ballot machine
+[voter1] ShouldICommitFraud = 0.6053494282747222
+[bad_influence] influencing voter3 to break the ballot machine
+[voter2] received a new candidate to vote for... paulinho_mao_cheia
+[bad_influence] influencing voter8 to change candidates...
+[voter5] received a new candidate to vote for... paulinho_mao_cheia
+[voter2] ShouldICommitFraud = 0.6695254326081095
+[voter3] recieved an intention to break the ballot machine
+[voter8] received a new candidate to vote for... paulinho_mao_cheia
+[voter5] ShouldICommitFraud = 0.23492517832939042
+[voter7] received a new candidate to vote for... paulinho_mao_cheia
+[voter3] ShouldICommitFraud = 0.6371612491312048
+[voter8] ShouldICommitFraud = 0.94659121663578
+[voter5] [[ FRAUD ]] changing my vote to paulinho_mao_cheia
+[voter7] ShouldICommitFraud = 0.572654887190476
+[judge] could not evaluate fraud ;(
+[judge] configuring voting section...
+[judge] searching candidates
+[judge] registered candidates... [paulinho_mao_cheia,paula,maria,cassiano,jorge,paulo,jose]
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] searching voters
+[judge] registered voters... [voter8,voter3,voter7,voter5,voter2,voter1,voter4,voter6]
+[judge] announcing the candidates
+[BallotMachine] candidates - [paulinho_mao_cheia,paula,maria,cassiano,jorge,paulo,jose]
+[BallotMachine] voters - [Ljava.lang.Object;@4ad0c14f
+[judge] openning the voting section...
+[voter3] going to vote
+[voter4] going to vote
+[voter7] going to vote
+[voter2] going to vote
+[voter1] going to vote
+[voter6] going to vote
+[voter1] wait time = 12
+[voter7] wait time = 10
+[voter6] wait time = 15
+[voter2] wait time = 10
+[voter4] wait time = 3
+[voter3] wait time = 9
+[voter5] going to vote
+[voter8] going to vote
+[voter5] wait time = 2
+[voter8] wait time = 12
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[voter5] going to vote
+[voter5] wait time = 1
+[voter5] going to vote
+[voter4] going to vote
+[voter4] wait time = 2
+[voter5] voter .my_name(self) is going to vote for [paulinho_mao_cheia]
+[voter4] going to vote
+[voter4] wait time = 1
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter4] going to vote
+[voter4] voter .my_name(self) is going to vote for [paulo]
+[voter3] going to vote
+[voter3] wait time = 8
+[voter7] going to vote
+[voter2] going to vote
+[voter2] wait time = 9
+[voter7] wait time = 9
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter1] going to vote
+[voter8] going to vote
+[voter1] wait time = 11
+[voter8] wait time = 11
+[voter6] going to vote
+[voter6] wait time = 14
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter3] going to vote
+[voter3] wait time = 7
+[voter2] going to vote
+[voter7] going to vote
+[voter7] wait time = 8
+[voter2] wait time = 8
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 10
+[voter1] wait time = 10
+[voter3] going to vote
+[voter3] wait time = 6
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter2] going to vote
+[voter7] going to vote
+[voter2] wait time = 7
+[voter7] wait time = 7
+[voter6] going to vote
+[voter6] wait time = 13
+[voter3] going to vote
+[voter3] wait time = 5
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 9
+[voter1] wait time = 9
+[voter7] going to vote
+[voter2] going to vote
+[voter7] wait time = 6
+[voter2] wait time = 6
+[voter3] going to vote
+[voter3] wait time = 4
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter3] going to vote
+[voter3] wait time = 3
+[voter2] going to vote
+[voter7] going to vote
+[voter2] wait time = 5
+[voter7] wait time = 5
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 12
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 8
+[voter1] wait time = 8
+[voter3] going to vote
+[voter3] wait time = 2
+[voter3] going to vote
+[voter3] wait time = 1
+[voter7] going to vote
+[voter2] going to vote
+[voter7] wait time = 4
+[voter3] going to vote
+[voter2] wait time = 4
+[voter3] voter .my_name(self) is going to vote for [jorge]
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter7] going to vote
+[voter2] going to vote
+[voter7] wait time = 3
+[voter2] wait time = 3
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 7
+[voter1] wait time = 7
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter7] going to vote
+[voter2] going to vote
+[voter7] wait time = 2
+[voter2] wait time = 2
+[voter6] going to vote
+[voter6] wait time = 11
+[voter7] going to vote
+[voter2] going to vote
+[voter7] wait time = 1
+[voter2] wait time = 1
+[voter7] going to vote
+[voter2] going to vote
+[voter2] voter .my_name(self) is going to vote for [maria]
+[voter7] voter .my_name(self) is going to vote for [maria]
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 6
+[voter1] wait time = 6
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 5
+[voter1] wait time = 5
+[voter6] going to vote
+[voter6] wait time = 10
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 4
+[voter1] wait time = 4
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter8] going to vote
+[voter1] going to vote
+[voter8] wait time = 3
+[voter1] wait time = 3
+[voter6] going to vote
+[voter6] wait time = 9
+[voter1] going to vote
+[voter8] going to vote
+[voter1] wait time = 2
+[voter8] wait time = 2
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter1] going to vote
+[voter8] going to vote
+[voter1] wait time = 1
+[voter8] wait time = 1
+[voter1] going to vote
+[voter8] going to vote
+[voter1] voter .my_name(self) is going to vote for [jose]
+[voter8] voter .my_name(self) is going to vote for [maria]
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 8
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 7
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 6
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 5
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 4
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 3
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 1
+[voter6] going to vote
+[voter6] wait time = 2
+[voter6] going to vote
+[voter6] wait time = 1
+[voter6] going to vote
+[voter6] voter .my_name(self) is going to vote for [maria]
+[judge] closing the voting section...
+[BallotMachine] Votes -> {jorge=1, jose=1, paulinho_mao_cheia=1, maria=4, paulo=1}
+[BallotMachine] Election result -> Candidate: maria (4)
+[judge] result? = maria
+[judge] there was no fraud in the election! :P

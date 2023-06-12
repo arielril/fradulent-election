@@ -1,0 +1,215 @@
+CArtAgO Http Server running on http://169.254.100.4:3273
+Jason Http Server running on http://169.254.100.4:3272
+Moise Http Server running on http://169.254.100.4:3271
+[Moise] OrgBoard fraudulent_election_org created.
+[Moise] scheme created: running_election: fraudulent_election_sch using artifact SchemeBoard
+[Moise] group created: g1: voting_section using artifact ora4mas.nopl.GroupBoard
+[Cartago] Workspace fraudulent_election_ws created.
+[Cartago] artifact ballot_machine: voting.BallotMachine() at fraudulent_election_ws created.
+[voter8] join workspace /main/fraudulent_election_org: done
+[voter6] join workspace /main/fraudulent_election_org: done
+[judge] join workspace /main/fraudulent_election_org: done
+[voter8] join workspace /main/fraudulent_election_ws: done
+[voter3] join workspace /main/fraudulent_election_org: done
+[voter6] join workspace /main/fraudulent_election_ws: done
+[voter8] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[judge] join workspace /main/fraudulent_election_ws: done
+[voter1] join workspace /main/fraudulent_election_org: done
+[voter6] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[judge] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter2] join workspace /main/fraudulent_election_org: done
+[voter3] join workspace /main/fraudulent_election_ws: done
+[voter8] focus on ballot_machine: done
+[voter5] join workspace /main/fraudulent_election_org: done
+[voter3] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter1] join workspace /main/fraudulent_election_ws: done
+[voter8] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[judge] focus on ballot_machine: done
+[voter4] join workspace /main/fraudulent_election_org: done
+[voter6] focus on ballot_machine: done
+[voter2] join workspace /main/fraudulent_election_ws: done
+[voter1] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[judge] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter5] join workspace /main/fraudulent_election_ws: done
+[voter7] join workspace /main/fraudulent_election_org: done
+[voter2] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter6] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter3] focus on ballot_machine: done
+[voter5] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter4] join workspace /main/fraudulent_election_ws: done
+[voter8] focus on g1: done
+[voter7] join workspace /main/fraudulent_election_ws: done
+[voter3] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter1] focus on ballot_machine: done
+[voter8] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter4] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter2] focus on ballot_machine: done
+[voter6] focus on g1: done
+[voter1] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter5] focus on ballot_machine: done
+[judge] focus on g1: done
+[voter7] focusing on artifact ballot_machine (at workspace /main/fraudulent_election_ws) using namespace default
+[voter4] focus on ballot_machine: done
+[voter2] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter6] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter4] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[judge] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter5] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter8] focus on fraudulent_election_org: done
+[voter7] focus on ballot_machine: done
+[voter1] focus on g1: done
+[voter8] joining fraudulent election
+[voter7] focusing on artifact g1 (at workspace /main/fraudulent_election_org) using namespace default
+[voter1] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter2] focus on g1: done
+[voter6] focus on fraudulent_election_org: done
+[voter5] focus on g1: done
+[voter4] focus on g1: done
+[voter6] joining fraudulent election
+[voter2] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[judge] focus on fraudulent_election_org: done
+[voter5] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter4] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter7] focus on g1: done
+[voter1] focus on fraudulent_election_org: done
+[voter7] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter1] joining fraudulent election
+[voter5] focus on fraudulent_election_org: done
+[voter2] focus on fraudulent_election_org: done
+[voter4] focus on fraudulent_election_org: done
+[voter5] joining fraudulent election
+[voter2] joining fraudulent election
+[voter4] joining fraudulent election
+[voter7] focus on fraudulent_election_org: done
+[voter7] joining fraudulent election
+[voter8] joined fraudulent election
+[voter6] joined fraudulent election
+[voter6] for this election I have a chance of [0.6038363815891952] to commit fraud
+[voter8] for this election I have a chance of [0.3832089444304496] to commit fraud
+[voter6] my name is voter6, i'm waiting to vote...
+[voter8] my name is voter8, i'm waiting to vote...
+[voter3] focus on g1: done
+[voter3] focusing on artifact fraudulent_election_org (at workspace /main/fraudulent_election_org) using namespace default
+[voter3] focus on fraudulent_election_org: done
+[voter3] joining fraudulent election
+[voter5] joined fraudulent election
+[voter2] joined fraudulent election
+[voter4] joined fraudulent election
+[voter1] joined fraudulent election
+[voter5] for this election I have a chance of [0.11766766867226286] to commit fraud
+[voter2] for this election I have a chance of [0.6183670566763224] to commit fraud
+[voter5] my name is voter5, i'm waiting to vote...
+[voter4] for this election I have a chance of [0.8412436821688025] to commit fraud
+[voter2] my name is voter2, i'm waiting to vote...
+[voter1] for this election I have a chance of [0.08569389507484071] to commit fraud
+[voter4] my name is voter4, i'm waiting to vote...
+[voter1] my name is voter1, i'm waiting to vote...
+[voter7] joined fraudulent election
+[voter7] for this election I have a chance of [0.6049924248722105] to commit fraud
+[voter7] my name is voter7, i'm waiting to vote...
+[voter3] joined fraudulent election
+[voter3] for this election I have a chance of [0.8596233002028554] to commit fraud
+[voter3] my name is voter3, i'm waiting to vote...
+[voter4] I am obliged to commit to voter on running_election... doing so
+[voter1] I am obliged to commit to voter on running_election... doing so
+[voter6] I am obliged to commit to voter on running_election... doing so
+[voter2] I am obliged to commit to voter on running_election... doing so
+[voter5] I am obliged to commit to voter on running_election... doing so
+[voter8] I am obliged to commit to voter on running_election... doing so
+[voter7] I am obliged to commit to voter on running_election... doing so
+[judge] I am obliged to commit to judge on running_election... doing so
+[voter3] I am obliged to commit to voter on running_election... doing so
+[bad_influence] new possible victm to commit fraud - voter8
+[bad_influence] new possible victm to commit fraud - voter6
+[bad_influence] influencing to commit fraud voter8
+[bad_influence] new possible victm to commit fraud - voter5
+[bad_influence] new possible victm to commit fraud - voter2
+[bad_influence] new possible victm to commit fraud - voter4
+[bad_influence] influencing to commit fraud voter6
+[bad_influence] new possible victm to commit fraud - voter1
+[bad_influence] new possible victm to commit fraud - voter7
+[bad_influence] new possible victm to commit fraud - voter3
+[bad_influence] influencing to commit fraud voter5
+[bad_influence] influencing to commit fraud voter2
+[bad_influence] influencing to commit fraud voter4
+[bad_influence] influencing voter8 to change candidates...
+[bad_influence] influencing to commit fraud voter1
+[bad_influence] influencing to commit fraud voter7
+[bad_influence] influencing to commit fraud voter3
+[bad_influence] influencing voter6 to break the ballot machine
+[voter8] received a new candidate to vote for... paulinho_mao_cheia
+[bad_influence] influencing voter5 to change candidates...
+[voter8] ShouldICommitFraud = 0.5632999584643072
+[bad_influence] influencing voter2 to change candidates...
+[voter6] recieved an intention to break the ballot machine
+[bad_influence] influencing voter4 to change candidates...
+[voter6] ShouldICommitFraud = 0.5334202160772932
+[bad_influence] influencing voter1 to change candidates...
+[voter6] [[ FRAUD ]] i will break the ballot machine!
+[voter5] received a new candidate to vote for... paulinho_mao_cheia
+[voter2] received a new candidate to vote for... paulinho_mao_cheia
+[bad_influence] influencing voter7 to break the ballot machine
+[voter5] ShouldICommitFraud = 0.6087819411973258
+[voter2] ShouldICommitFraud = 0.3636335040029731
+[bad_influence] influencing voter3 to change candidates...
+[voter4] received a new candidate to vote for... paulinho_mao_cheia
+[voter2] [[ FRAUD ]] changing my vote to paulinho_mao_cheia
+[voter1] received a new candidate to vote for... paulinho_mao_cheia
+[voter3] received a new candidate to vote for... paulinho_mao_cheia
+[voter4] ShouldICommitFraud = 0.824079990099024
+[voter7] recieved an intention to break the ballot machine
+[voter3] ShouldICommitFraud = 0.6555514707746005
+[voter1] ShouldICommitFraud = 0.6441438508878546
+[voter7] ShouldICommitFraud = 0.7517355329402289
+[voter4] [[ FRAUD ]] changing my vote to paulinho_mao_cheia
+[voter3] [[ FRAUD ]] changing my vote to paulinho_mao_cheia
+[judge] could not evaluate fraud ;(
+[judge] configuring voting section...
+[judge] searching candidates
+[judge] registered candidates... [paulinho_mao_cheia,paula,maria,cassiano,jorge,paulo,jose]
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] could not evaluate fraud ;(
+[judge] searching voters
+[judge] registered voters... [voter3,voter7,voter1,voter4,voter2,voter5,voter8,voter6]
+[judge] announcing the candidates
+[BallotMachine] candidates - [paulinho_mao_cheia,paula,maria,cassiano,jorge,paulo,jose]
+[BallotMachine] voters - [Ljava.lang.Object;@4d48aa42
+[judge] openning the voting section...
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[voter8] going to vote
+[voter8] voter .my_name(self) is going to vote for [maria]
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[voter5] going to vote
+[voter5] voter .my_name(self) is going to vote for [maria]
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[judge] evaluating if there was any fraud
+[judge] votes on paulinho_mao_cheia = 0
+[voter6] going to vote
+[voter6] [[ FRAUD ]] breaking the ballot machine!
+[BallotMachine] received the DESTROY operation!
+[judge] [[ FRAUD ]] the ballot machine is BROKEN!
+[voter1] someone commited fraud, election halted...
+[voter6] someone commited fraud, election halted...
+[voter7] someone commited fraud, election halted...
+[voter3] someone commited fraud, election halted...
+[voter8] someone commited fraud, election halted...
+[voter5] someone commited fraud, election halted...
+[voter4] someone commited fraud, election halted...
+[voter2] someone commited fraud, election halted...
