@@ -77,7 +77,7 @@ discovered_fraud(false).
 +!analyze_fraud[scheme(F), source(_)]
   : election_status("broken")
   <- ?joined(fraudulent_election_ws, _);
-    .print("[[ FRAUD ]] the ballot machine is BROKEN!");
+    .print("[[ GOT_FRAUD ]] the ballot machine is BROKEN!");
     ballot_machine::foundFraud;
     .broadcast(tell, discovered_fraud(yes));
   .
