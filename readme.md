@@ -83,3 +83,24 @@ the bad influence
 
 ### Candidate
 - Receive votes from voters
+
+
+## Simulation Results
+
+### normal voter
+
+- how many frauds were discovered? 8/10
+- which was the most fraudulent action? 
+  - 4 broken ballots
+  - 4 vote change
+- how many voters were influenced to change their vote? avg 3
+- how many voters were influenced to break the ballot machine? avg 3
+ 
+### random voter
+
+- how many frauds were discovered? 9/10
+- which was the most fraudulent action? 
+  - 8 broken ballots
+  - 1 vote changed 
+- how many voters were influenced to change their vote? avg 2
+- how many voters were influenced to break the ballot machine? avg 2
